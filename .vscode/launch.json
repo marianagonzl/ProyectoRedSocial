@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/anannicole/Desktop/red social/ProyectoRedSocial",
+      "program": "/Users/anannicole/Desktop/red social/ProyectoRedSocial/build/Debug/outDebug"
+    }
+  ]
+}
