@@ -18,7 +18,7 @@ string nacionalidad;
 vector<Usuario*> amigos;
 vector<Publicacion*> publicaciones;
 
-//Métodos públicos
+
 int getId();
 void mostrar();
 void mostrarAmigos();
