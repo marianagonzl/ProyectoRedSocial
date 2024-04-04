@@ -8,7 +8,7 @@
 using namespace std;
 
 class Usuario{
-private: 
+private:
 int id;
 
 public:
@@ -50,15 +50,15 @@ cout<< "Nacionalidad: "<<nacionalidad<<endl;
 
 void Usuario::mostrarAmigos(){
     cout << "Amigo de " << nombre << " : " <<endl;
-    for(auto& amigo : amigos) {
-        amigo -> mostrar();
+    for(size_t i = 0; i < amigos.size(); ++i) {
+        amigos[i]->mostrar();
     }
 }
 
 void Usuario::mostrarPublicaciones(){
     cout << "publicacion " << nombre << " : " << endl;
-    for (auto& publicacion : publicaciones) {
-        publicacion -> mostrarPublicacion();
+    for (size_t i = 0; i < publicaciones.size(); ++i) {
+        publicaciones[i]->mostrarPublicacion();
     }
 }
 void Usuario::agregarAmigo(Usuario* nuevoAmigo){
@@ -71,12 +71,12 @@ void Usuario::crearPublicacion(string& fecha, string& contenido){
     publicaciones.push_back(nuevaPublicacion);
 }
  Usuario::Usuario* getAmigo(int id){
-for(auto& amigo : amigos) {
-    if(amigo -> getId() == id) {
-        return amigo;
+for(size_t i = 0; i < amigos.size(); ++i) {
+    if(amigos[i]->getId() == id) {
+        return amigos[i];
     }
 }
-cout << "No existe amigo cone se id" << endl;
+cout << "No existe amigo con este id" << endl;
 return nullptr;
 
 }
