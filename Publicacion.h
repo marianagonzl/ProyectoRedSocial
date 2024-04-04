@@ -18,13 +18,16 @@ string fecha;
 string contenido;
 Usuario* usuario;
 void mostrarPublicacion();
-Publicacion(Usuario* usuario, string& fecha, string& contenido);
+Publicacion(Usuario* usuario, string fecha, string contenido);
 
 
 };
 
-Publicacion::Publicacion(Usuario* usuario, string& fecha, string& contenido):
-    usuario(usuario), fecha(fecha), contenido(contenido) {}
+Publicacion::Publicacion(Usuario* usuario, string fecha, string contenido){
+    this->usuario = usuario;
+    this->fecha = fecha;
+    this->contenido = contenido;
+}
 
 void Publicacion::mostrarPublicacion(){
     cout<<"Fecha: "<<fecha<<endl;
