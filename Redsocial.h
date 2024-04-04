@@ -18,56 +18,66 @@ public:
 string nombre;
 int numeroDeUsuarios;
 int numeroDePublicaciones;
-//Métodos
-//Método para agregar usuarios a la rede social
+
+    
 
 void agregarUsuario(Usuario* usuario){
     usuarios.push_back(usuario);
     numeroDeUsuarios++;
 }
-//Método para mostrarUsuarios
+
+    
 void mostarUsuarios() {
-    for(auto usuario : usuarios) {
-    usuario -> mostrar(); 
+    for(size_t i=0; i< usuarios.size(); ++i) {
+        usuarios[i]->mostrar();
     }
 }
-//Método para mostrar publicaciones
+
 
 void mostrarPublicaciones(){
-for(auto publicacion : publicaciones){
-    publicacion->mostrarPublicacion();
+for(size_t i = 0; i < publicaciones.size(); ++i){
+    publicaciones[i]->mostrarPublicacion();
     }
 }
 
-//Método para obtener un usuario por ID
+
+
 
 Usuario* getUsuario(int id){
-    for (auto usuario: usuarios){
-        if(usuario -> getId() == id){
-            return usuario;
+    for (size_t i = 0; i < usuarios.size(); ++i){
+        if(usuarios[i]->getId() == id){
+            return usuarios[i];
         }
     }
-    return nullptr; //si no se encuentra
+    
+    cout<<"No existe ningun usuario con este Id"<<endl;
+    return nullptr;
 }
 
-Redsocial(string& nombre):
-    nombre(nombre), numeroDeUsuarios(0), numeroDePublicaciones(0){
-       
-             
+    Redsocial(string nombre): nombre(nombre){
+        numeroDeUsuarios = 0;
+        numeroDePublicaciones = 0;
+        
     }
-//Crea red social con nom,bre y una lista precargada de usuario
 
-Redsocial(string& nombre,vector<Usuario*>& usuarios):
-    nombre(nombre), usuarios(usuarios), numeroDeUsuarios(usuarios.size()), numeroDePublicaciones(){}
 
-//Crea red social con nom,bre con una lista precargada de usuario y  publicaciones
-Redsocial(string& nombre,vector<Usuario*>& usuarios, vector<Publicacion*>& publicaciones):
-nombre(nombre), usuarios(usuarios), publicaciones(publicaciones),numeroDeUsuarios(usuarios.size()), numeroDePublicaciones(publicaciones.size()){}
+Redsocial(string nombre,vector<Usuario*> usuarios): nombre(nombre), usuarios(usuarios){
+        numeroDeUsuarios = usuarios.size();
+        numeroDePublicaciones = 0;
+    }
+    
+
+
+Redsocial(string nombre,vector<Usuario*> usuarios, vector<Publicacion*> publicaciones):
+    nombre(nombre), usuarios(usuarios), publicaciones(publicaciones){
+        numeroDeUsuarios = usuarios.size();
+        numeroDePublicaciones = publicaciones.size();
+    }
 
 
 
 
 
 };
-#endif //redsocial_h
+#endif
 
