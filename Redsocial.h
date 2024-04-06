@@ -7,6 +7,8 @@
 #include "Usuario.h"
 #include "Publicacion.h"
 using namespace std;
+class Usuario;
+class Publicacion;
 
 class Redsocial{
 private: 
@@ -18,6 +20,7 @@ public:
 string nombre;
 int numeroDeUsuarios;
 int numeroDePublicaciones;
+void mostrarUsuarios();
 
     
 
@@ -27,15 +30,15 @@ void agregarUsuario(Usuario* usuario){
 }
 
     
-void mostarUsuarios() {
-    for(size_t i=0; i< usuarios.size(); ++i) {
+void Redsocial:: mostrarUsuarios() {
+    for(int i=0; i< usuarios.size(); ++i) {
         usuarios[i]->mostrar();
     }
 }
 
 
 void mostrarPublicaciones(){
-for(size_t i = 0; i < publicaciones.size(); ++i){
+for(int i = 0; i < publicaciones.size(); i++){
     publicaciones[i]->mostrarPublicacion();
     }
 }
@@ -54,24 +57,29 @@ Usuario* getUsuario(int id){
     return nullptr;
 }
 
-    Redsocial(string nombre): nombre(nombre){
-        numeroDeUsuarios = 0;
-        numeroDePublicaciones = 0;
+    Redsocial(string nombre){
+        this->nombre= nombre;
+        this->numeroDeUsuarios = 0;
+        this->numeroDePublicaciones = 0;
         
     }
 
 
-Redsocial(string nombre,vector<Usuario*> usuarios): nombre(nombre), usuarios(usuarios){
-        numeroDeUsuarios = usuarios.size();
-        numeroDePublicaciones = 0;
+Redsocial(string nombre,vector<Usuario*> usuarios){
+       this->nombre= nombre;
+       this->usuarios= usuarios;
+       this->numeroDeUsuarios = usuarios.size();
+       this->numeroDePublicaciones = 0;
     }
     
 
 
-Redsocial(string nombre,vector<Usuario*> usuarios, vector<Publicacion*> publicaciones):
-    nombre(nombre), usuarios(usuarios), publicaciones(publicaciones){
-        numeroDeUsuarios = usuarios.size();
-        numeroDePublicaciones = publicaciones.size();
+Redsocial(string nombre,vector<Usuario*> usuarios, vector<Publicacion*> publicaciones){ 
+        this->nombre= nombre;
+        this->usuarios = usuarios;
+        this->publicaciones = publicaciones;
+        this->numeroDeUsuarios = usuarios.size();
+        this->numeroDePublicaciones = publicaciones.size();
     }
 
 
