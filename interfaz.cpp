@@ -1,10 +1,11 @@
 #include "Redsocial.h"
+#include "Usuario.h"
 #include <iostream>
 using namespace std;
-Usuario *usuario;
-Usuario *amigo;
 
 void menuUsuario(int usu);
+Usuario *usuario;
+Usuario *amigo;
 
 int menuprincipal()
 {
@@ -63,71 +64,80 @@ inicio:
     fin:
         return 0;
     }
-
-    void menuUsUario(int usu)
+}
+void menuUsUario(int usu)
+{
+    int num;
+inicio:
+    cout << "Bienvenido a Famous crushes" << endl;
+    cout << "Introduce un numero para realizar una de las siguientes acciones: " << endl;
+    cout << "1. Ver lista de amigos" << endl;
+    cout << "2. Ver publicaciones" << endl;
+    cout << "3. Crear publicacion" << endl;
+    cout << "4. Entrar a perfil de amigo" << endl;
+    cout << "5. Agregar un nuevo amigo" << endl;
+    cout << "0. Salir" << endl;
+    cin >> num;
+    system("cls");
+    switch (num)
     {
-        int num;
-    inicio:
-        cout << "Bienvenido a Famous crushes" << endl;
-        cout << "Introduce un numero para realizar una de las siguientes acciones: " << endl;
-        cout << "1. Ver lista de amigos" << endl;
-        cout << "2. Ver publicaciones" << endl;
-        cout << "3. Crear publicacion" << endl;
-        cout << "4. Entrar a perfil de amigo" << endl;
-        cout << "5. Agregar un nuevo amigo" << endl;
-        cout << "0. Salir" << endl;
-        cin >> num;
-        system("cls");
-        switch (num)
+    case 1:
+        cout << "Listado de tus amigos" << endl;
+        usuario->mostrarAmigos(); // muestra listado de amigos del usuarios
+        break;
+
+    case 2:
+        cout << "Listado de todas tus publicaciones" << endl;
+        usuario->mostrarPublicaciones(); // muestra listado de todas las publicaciones que ha hecho el usuario
+        break;
+
+    case 3:
+        cout << "Crear Publicacion" << endl;
+        usuario->crearPublicacion(); // crear nueva publicacion
+        break;
+
+    case 4: // introduce ID de amigo para identificarlo y muestra menu del amigo
+        int idamige;
+        cout << "Escribe el id de tu amigo para identifiarlo: " << endl;
+        cin >> idamige;
+        amigo = FamousCrushes.getUsuario(idamige);
+        if (usuario != nullptr)
         {
-        case 1:
-            cout << "Listado de tus amigos" << endl;
-            usuario->mostrarAmigos(); // muestra listado de amigos del usuarios
-            break;
-
-        case 2:
-            cout << "Listado de todas tus publicaciones" << endl;
-            usuario->mostrarPublicaciones(); // muestra listado de todas las publicaciones que ha hecho el usuario
-            break;
-
-        case 3:
-            cout << "Crear Publicacion" << endl;
-            usuario->crearPublicacion(); // crear nueva publicacion
-            break;
-
-        case 4: // introduce ID de amigo para identificarlo y muestra menu del amigo
-            int idamigo;
-            cout << "Escribe el id de tu amigo para identifiarlo: " << endl;
-            cin >> idamigo;
-            FamousCrushes.getUsuario(idamigo);
-            if (usuario != nullptr)
-            {
-                cout << "Menu de tu amigo" << endl;
-                amigo->mostrar();
-            }
-            else
-            {
-                cout << "Amigo no encontrado" << endl;
-            }
-            break;
-
-        case 5:
-            cout << "Agregar amigo" << endl;
-            usuario->agregarAmigo(amigo); // se introduce id y se hacen amigos
-            break;
-
-        case 0:
-            menuprincipal();
-            break;
-
-        default:
-            cout << "Ingresa una de las opciones validas" << endl;
-            goto inicio;
+            cout << "Menu de tu amigo" << endl;
+            amigo->mostrar();
         }
-    }
+        else
+        {
+            cout << "Amigo no encontrado" << endl;
+        }
+        break;
+    case 5:
+        cout << "Agregar amigo" << endl << endl;
+        cout << "Listado de todos los usuarios que existen:" << endl;
+        FamousCrushes.mostrarUsuarios();
 
-    int main()
-    {
+        cout << "Escribe el id del usuario: " << endl;
+        cin >> idamige;
+        amigo = FamousCrushes.getUsuario(idamige);
+        if (usuario != nullptr)
+        {
+            cout << "Nuevo amigo kawaii agregado" << endl;
+            usuario->agregarAmigo(amigo); // se introduce id y se hacen amigos
+        }
+        break;
+
+    case 0:
         menuprincipal();
-        return 0;
+        break;
+
+    default:
+        cout << "Ingresa una de las opciones validas" << endl;
+        goto inicio;
     }
+}
+
+int main()
+{
+    menuprincipal();
+    return 0;
+}
