@@ -2,6 +2,7 @@
 #define usuario_h
 
 #include <iostream>
+#include <cstdlib>
 #include <vector>
 #include <string>
 #include "Publicacion.h"
@@ -76,6 +77,25 @@ for(int i = 0; i < amigos.size(); i++) {
 cout << "No existe amigo con este id" << endl;
 return nullptr;
 
+}
+Usuario::Usuario(string nombre){
+    this->id = rand() % 1000; 
+    this->nombre = nombre;
+    this->edad = 0;
+    this->nacionalidad = "no definida";
+}
+
+Usuario::Usuario(string nombre, int edad){
+    this->id = rand() % 1000; 
+    this->nombre = nombre;
+    this->edad = edad;
+    this->nacionalidad = "no definida";
+}
+Usuario::Usuario(string nombre, int edad, string nacionalidad){
+    this->id = rand() % 1000; 
+    this->nombre = nombre;
+    this->edad = edad;
+    this->nacionalidad = nacionalidad;
 }
 };
 #endif
