@@ -30,9 +30,9 @@ Publicacion::Publicacion(Usuario* usuario, string fecha, string contenido){
 }
 
 void Publicacion::mostrarPublicacion(){
-    cout<<"Fecha: "<<fecha<<endl;
-    cout<<"Contenido: "<<contenido<<endl;
-    cout<<"usuario: "<<usuario->nombre<<endl;
+    cout<<"Fecha: "<<this->fecha<<endl;
+    cout<<"Contenido: "<<this->contenido<<endl;
+    cout<<"usuario: "<<this->usuario->nombre<<endl;
 }
 
 #endif

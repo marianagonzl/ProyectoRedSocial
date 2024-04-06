@@ -1,4 +1,5 @@
 #include "Redsocial.h"
+#include "Usuario.h"
 #include <iostream>
 using namespace std;
 Usuario *usuario;
@@ -63,7 +64,7 @@ inicio:
     fin:
         return 0;
     }
-
+}
     void menuUsUario(int usu)
     {
         int num;
@@ -100,16 +101,19 @@ inicio:
             cout << "Escribe el id de tu amigo para identifiarlo: " << endl;
             cin >> idamigo;
             FamousCrushes.getUsuario(idamigo);
-            if (usuario != nullptr)
+            if (usuario != nullptr){ 
             {
                 cout << "Menu de tu amigo" << endl;
                 amigo->mostrar();
             }
             else
             {
-                cout << "Amigo no encontrado" << endl;
-            }
-            break;
+
+            cout << "Amigo no encontrado" << endl;
+            
+            break};
+            
+            
 
         case 5:
             cout << "Agregar amigo" << endl;
