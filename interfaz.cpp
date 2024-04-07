@@ -65,7 +65,6 @@ inicio:
         return 0;
     }
 }
-<<<<<<< HEAD
 void menuUsUario(int usu)
 {
     int num;
@@ -81,9 +80,6 @@ inicio:
     cin >> num;
     system("cls");
     switch (num)
-=======
-    void menuUsUario(int usu)
->>>>>>> a57dbff00046d608291545f6368b54124c7ad2e8
     {
     case 1:
         cout << "Listado de tus amigos" << endl;
@@ -107,57 +103,8 @@ inicio:
         amigo = FamousCrushes.getUsuario(idamige);
         if (usuario != nullptr)
         {
-<<<<<<< HEAD
             cout << "Menu de tu amigo" << endl;
             amigo->mostrar();
-=======
-        case 1:
-            cout << "Listado de tus amigos" << endl;
-            usuario->mostrarAmigos(); // muestra listado de amigos del usuarios
-            break;
-
-        case 2:
-            cout << "Listado de todas tus publicaciones" << endl;
-            usuario->mostrarPublicaciones(); // muestra listado de todas las publicaciones que ha hecho el usuario
-            break;
-
-        case 3:
-            cout << "Crear Publicacion" << endl;
-            usuario->crearPublicacion(); // crear nueva publicacion
-            break;
-
-        case 4: // introduce ID de amigo para identificarlo y muestra menu del amigo
-            int idamigo;
-            cout << "Escribe el id de tu amigo para identifiarlo: " << endl;
-            cin >> idamigo;
-            FamousCrushes.getUsuario(idamigo);
-            if (usuario != nullptr){ 
-            {
-                cout << "Menu de tu amigo" << endl;
-                amigo->mostrar();
-            }
-            else
-            {
-
-            cout << "Amigo no encontrado" << endl;
-            
-            break};
-            
-            
-
-        case 5:
-            cout << "Agregar amigo" << endl;
-            usuario->agregarAmigo(amigo); // se introduce id y se hacen amigos
-            break;
-
-        case 0:
-            menuprincipal();
-            break;
-
-        default:
-            cout << "Ingresa una de las opciones validas" << endl;
-            goto inicio;
->>>>>>> a57dbff00046d608291545f6368b54124c7ad2e8
         }
         else
         {
