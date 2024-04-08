@@ -19,7 +19,7 @@ int edad;
 string nacionalidad;
 vector<Usuario*> amigos;
 vector<Publicacion*> publicaciones;
-vector<Giveaway*> ga;
+vector<Giveaway*>ga;
 
 
 int getId();

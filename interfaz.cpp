@@ -25,7 +25,6 @@ inicio:
     cout << "2. Ver lista de publicaciones" << endl;
     cout << "3. Entrar a un perfil de usuario" << endl;
     cout << "4. Agregar un nuevo usuario" << endl;
-    cout << "5. Mostrar lista de GIVEAWAYS"<<endl;
     cout << "0. Salir" << endl;
     cin >> num;
     system("cls");
@@ -53,7 +52,7 @@ inicio:
         {
             menuUsuario(usuario);
         }
-        // menuUsuario(FamousCrushes.getUsuario(idusu));
+       
         goto inicio;
         break;
 
@@ -62,9 +61,7 @@ inicio:
         FamousCrushes.agregarUsuario();
         goto inicio;
         break;
-    case 5:
-    cout<< "Listado de todos los GIVEAWAYS"<<endl;
-    FamousCrushes.agregarUsuario();
+
     case 0:
         goto fin;
         break;
@@ -80,16 +77,17 @@ fin:
 void menuUsuario(Usuario *usu)
 {
     int num;
-inicio:
+
     cout << "Bienvenido a Famous crushes" << endl;
+    inicio:
     cout << "Introduce un numero para realizar una de las siguientes acciones: " << endl;
     cout << "1. Ver lista de amigos" << endl;
     cout << "2. Ver publicaciones" << endl;
     cout << "3. Crear publicacion" << endl;
     cout << "4. Entrar a perfil de amigo" << endl;
     cout << "5. Agregar un nuevo amigo" << endl;
-    cout <<" 6. Crear GIVEAWAY"<<endl,
-    cout <<" 7. Ver GIVEAWAYS"<<endl;
+    cout <<"6. Crear GIVEAWAY"<<endl,
+    cout <<"7. Ver GIVEAWAYS"<<endl;
     cout << "0. Salir" << endl;
     cin >> num;
     system("cls");
