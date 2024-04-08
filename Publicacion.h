@@ -19,6 +19,7 @@ string contenido;
 Usuario* usuario;
 void mostrarPublicacion();
 Publicacion(Usuario* usuario, string fecha, string contenido);
+Publicacion();
 
 
 };
@@ -32,7 +33,11 @@ Publicacion::Publicacion(Usuario* usuario, string fecha, string contenido){
 void Publicacion::mostrarPublicacion(){
     cout<<"Fecha: "<<this->fecha<<endl;
     cout<<"Contenido: "<<this->contenido<<endl;
-    cout<<"usuario: "<<this->usuario->nombre<<endl;
+    cout<<"usuario: "<<usuario->nombre<<endl;
 }
+Publicacion::Publicacion()
+{
+this->usuario=nullptr;
 
+}
 #endif

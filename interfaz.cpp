@@ -6,10 +6,10 @@ using namespace std;
 void menuUsuario(int usu);
 Usuario *usuario;
 Usuario *amigo;
-
+Redsocial FamousCrushes("FamousCrushes");
 int menuprincipal()
 {
-    Redsocial FamousCrushes("FamousCrushes");
+    
     int num;
 inicio:
     cout << "Bienvenido a Famous crushes" << endl;
@@ -25,19 +25,19 @@ inicio:
     {
     case 1:
         cout << "Listado de todos los usuarios que existen" << endl;
-        FamousCrushes.mostrarUsuarios(); // muestra listado de todos los usuarios que existen en la red social
+        FamousCrushes.mostrarUsuarios(); 
         break;
 
     case 2:
         cout << "Listado de todas las publicaciones que existen" << endl;
-        FamousCrushes.mostrarPublicaciones(); // muestra listado de todas las publicaciones que existen en la red social
+        FamousCrushes.mostrarPublicaciones(); 
         break;
 
     case 3:
         int idusu;
         cout << "Escribe tu id para identificación: " << endl;
         cin >> idusu;
-        usuario = FamousCrushes.getUsuario(idusu); // introduce ID del usuario y se muestra el menu de usuario
+        usuario = FamousCrushes.getUsuario(idusu); 
         if (usuario != nullptr)
         {
             cout << "Usuario encontrado" << endl;
@@ -83,20 +83,21 @@ inicio:
     {
     case 1:
         cout << "Listado de tus amigos" << endl;
-        usuario->mostrarAmigos(); // muestra listado de amigos del usuarios
+        usuario->mostrarAmigos(); 
         break;
 
     case 2:
         cout << "Listado de todas tus publicaciones" << endl;
-        usuario->mostrarPublicaciones(); // muestra listado de todas las publicaciones que ha hecho el usuario
+        usuario->mostrarPublicaciones();
         break;
 
     case 3:
         cout << "Crear Publicacion" << endl;
-        usuario->crearPublicacion(); // crear nueva publicacion
+
+        usuario->crearPublicacion(); 
         break;
 
-    case 4: // introduce ID de amigo para identificarlo y muestra menu del amigo
+    case 4: 
         int idamige;
         cout << "Escribe el id de tu amigo para identifiarlo: " << endl;
         cin >> idamige;
@@ -122,7 +123,7 @@ inicio:
         if (usuario != nullptr)
         {
             cout << "Nuevo amigo kawaii agregado" << endl;
-            usuario->agregarAmigo(amigo); // se introduce id y se hacen amigos
+            usuario->agregarAmigo(amigo);
         }
         break;
 

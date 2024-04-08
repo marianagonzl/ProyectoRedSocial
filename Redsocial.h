@@ -24,8 +24,16 @@ void mostrarUsuarios();
 
     
 
-void agregarUsuario(Usuario* usuario){
-    usuarios.push_back(usuario);
+void agregarUsuario(){
+    Usuario* nuevoUs= new Usuario();
+    cout<<"Vas a crear un nuevo usuario"<<endl;
+    cout<<"Dame su nombre"<<endl;
+    cin>>nuevoUs->nombre;
+    cout<<"Dame su edad"<<endl;
+    cin>>nuevoUs->edad;
+    cout<<"Dame su nacionalidad"<<endl;
+    cin>>nuevoUs->nacionalidad;
+    usuarios.push_back(nuevoUs);
     numeroDeUsuarios++;
 }
 
@@ -47,7 +55,7 @@ for(int i = 0; i < publicaciones.size(); i++){
 
 
 Usuario* getUsuario(int id){
-    for (size_t i = 0; i < usuarios.size(); ++i){
+    for ( int i = 0; i < usuarios.size(); ++i){
         if(usuarios[i]->getId() == id){
             return usuarios[i];
         }

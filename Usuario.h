@@ -26,8 +26,9 @@ void mostrar();
 void mostrarAmigos();
 void mostrarPublicaciones();
 void agregarAmigo(Usuario* nuevoAmigo);
-void crearPublicacion(string fecha, string contenido);
+void crearPublicacion();
 Usuario* getAmigo(int id);
+Usuario();
 Usuario(string nombre);
 Usuario(string nombre, int edad);
 Usuario(string nombre, int edad, string nacionalidad);
@@ -65,8 +66,14 @@ void Usuario::agregarAmigo(Usuario* nuevoAmigo){
     nuevoAmigo -> amigos.push_back(this);
 
 }
-void Usuario::crearPublicacion(string fecha, string contenido){
-    Publicacion* nuevaPublicacion = new Publicacion(this, fecha, contenido);
+void Usuario::crearPublicacion(){
+    Publicacion* nuevaPublicacion = new Publicacion();
+    cout<<"Estas creando una nueva,te voy a pedir una serie de datos"<<endl;
+    nuevaPublicacion->usuario=this;
+    cout<<"Dame la fecha de hoy"<<endl;
+    cin>>nuevaPublicacion->fecha;
+    cout<<"Dame el contenido de tu publicacion"<<endl;
+    cin>>nuevaPublicacion->contenido;
     publicaciones.push_back(nuevaPublicacion);
 }
  Usuario* Usuario::getAmigo(int id){
@@ -97,6 +104,10 @@ Usuario::Usuario(string nombre, int edad, string nacionalidad){
     this->nombre = nombre;
     this->edad = edad;
     this->nacionalidad = nacionalidad;
+}
+Usuario::Usuario ()
+{
+this->id = rand() % 1000; 
 }
 
 #endif
