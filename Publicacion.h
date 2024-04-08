@@ -21,23 +21,12 @@ void mostrarPublicacion();
 Publicacion(Usuario* usuario, string fecha, string contenido);
 Publicacion();
 
-
 };
 
-Publicacion::Publicacion(Usuario* usuario, string fecha, string contenido){
-    this->usuario = usuario;
-    this->fecha = fecha;
-    this->contenido = contenido;
-}
+class Giveaway: public Publicacion{
+public:
+void mostrarGiveA();
+};
 
-void Publicacion::mostrarPublicacion(){
-    cout<<"Fecha: "<<this->fecha<<endl;
-    cout<<"Contenido: "<<this->contenido<<endl;
-    cout<<"usuario: "<<usuario->nombre<<endl;
-}
-Publicacion::Publicacion()
-{
-this->usuario=nullptr;
 
-}
 #endif
