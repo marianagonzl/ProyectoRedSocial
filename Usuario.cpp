@@ -26,6 +26,12 @@ void Usuario::mostrarPublicaciones(){
         publicaciones[i]->mostrarPublicacion();
     }
 }
+void Usuario::mostrarGiveA(){
+    cout << "publicacion " << this->nombre << " : " << endl;
+    for (int i = 0; i < this->ga.size(); i++) {
+        ga[i]->mostrarGiveA();
+    }
+}
 void Usuario::agregarAmigo(Usuario* nuevoAmigo){
     amigos.push_back(nuevoAmigo);
     nuevoAmigo -> amigos.push_back(this);

@@ -25,6 +25,7 @@ inicio:
     cout << "2. Ver lista de publicaciones" << endl;
     cout << "3. Entrar a un perfil de usuario" << endl;
     cout << "4. Agregar un nuevo usuario" << endl;
+    cout << "5. Mostrar lista de GIVEAWAYS"<<endl;
     cout << "0. Salir" << endl;
     cin >> num;
     system("cls");
@@ -61,7 +62,9 @@ inicio:
         FamousCrushes.agregarUsuario();
         goto inicio;
         break;
-
+    case 5:
+    cout<< "Listado de todos los GIVEAWAYS"<<endl;
+    FamousCrushes.agregarUsuario();
     case 0:
         goto fin;
         break;
@@ -134,7 +137,7 @@ inicio:
     usu->crearGiveA();
         goto inicio;
         break;
-        case 7:
+    case 7:
     usu->mostrarGiveA();
         goto inicio;
         break;

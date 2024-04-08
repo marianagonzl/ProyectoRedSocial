@@ -29,6 +29,7 @@ void mostrarPublicaciones();
 void agregarAmigo(Usuario* nuevoAmigo);
 void crearPublicacion();
 void crearGiveA();
+void mostrarGiveA();
 Usuario* getAmigo(int id);
 Usuario();
 Usuario(string nombre);
