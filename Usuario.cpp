@@ -29,7 +29,7 @@ void Usuario::mostrarPublicaciones(){
 void Usuario::mostrarGiveA(){
     cout << "publicacion " << this->nombre << " : " << endl;
     for (int i = 0; i < this->ga.size(); i++) {
-        ga[i]->mostrarGiveA();
+        this->ga[i]->mostrarGiveA();
     }
 }
 void Usuario::agregarAmigo(Usuario* nuevoAmigo){
@@ -41,9 +41,9 @@ Publicacion* Usuario::crearPublicacion(){
     Publicacion* nuevaPublicacion = new Publicacion();
     cout<<"Estas creando una nueva,te voy a pedir una serie de datos"<<endl;
     nuevaPublicacion->usuario=this;
-    cout<<"Dame la fecha de hoy"<<endl;
+    cout<<"Escribe la fecha para la publicacion"<<endl;
     cin>>nuevaPublicacion->fecha;
-    cout<<"Dame el contenido de tu publicacion, sin espacios"<<endl;
+    cout<<"Escribe el contenido de tu publicacion, sin espacios"<<endl;
     cin>>nuevaPublicacion->contenido;
     this->publicaciones.push_back(nuevaPublicacion);
     return this->publicaciones.back();
@@ -54,7 +54,7 @@ for(int i = 0; i < this->amigos.size(); i++) {
         return this->amigos[i];
     }
 }
-cout << "No existe amigo con este id" << endl;
+cout << "No existe amigue con este id" << endl;
 return nullptr;
 
 }
@@ -85,11 +85,11 @@ this->id = rand() % 1000;
 void Usuario::crearGiveA()
 {
 Giveaway* G = new Giveaway();
-    cout<<"Estas creando una nueva publicacion Giveaway,te voy a pedir una serie de datos"<<endl;
+    cout<<"Estas creando una nueva publicacion Giveaway, te voy a pedir una serie de datos"<<endl;
     G->usuario=this;
-    cout<<"Dame la fecha de hoy"<<endl;
+    cout<<"Escribe la fecha del Giveaway"<<endl;
     cin>>G->fecha;
-    cout<<"Dame el contenido de tu publicacion, sin espacios"<<endl;
+    cout<<"Escribe el contenido de tu publicacion, sin espacios"<<endl;
     cin>>G->contenido;
     ga.push_back(G);
 }
