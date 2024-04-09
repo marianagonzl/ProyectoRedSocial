@@ -36,9 +36,8 @@ void Usuario::agregarAmigo(Usuario* nuevoAmigo){
     amigos.push_back(nuevoAmigo);
     nuevoAmigo -> amigos.push_back(this);
     cout<<"Ya tienes un nuevo amigue kawaii"<<endl<<endl;
-
 }
-void Usuario::crearPublicacion(){
+Publicacion* Usuario::crearPublicacion(){
     Publicacion* nuevaPublicacion = new Publicacion();
     cout<<"Estas creando una nueva,te voy a pedir una serie de datos"<<endl;
     nuevaPublicacion->usuario=this;
@@ -46,7 +45,8 @@ void Usuario::crearPublicacion(){
     cin>>nuevaPublicacion->fecha;
     cout<<"Dame el contenido de tu publicacion, sin espacios"<<endl;
     cin>>nuevaPublicacion->contenido;
-    publicaciones.push_back(nuevaPublicacion);
+    this->publicaciones.push_back(nuevaPublicacion);
+    return this->publicaciones.back();
 }
  Usuario* Usuario::getAmigo(int id){
 for(int i = 0; i < this->amigos.size(); i++) {

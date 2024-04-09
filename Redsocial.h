@@ -31,6 +31,7 @@ void mostrarPublicaciones();
 void mostrarUsuarios() ;
 void agregarUsuario();
 void mostrarGiveaway();
+void agregarPublicaciones(Publicacion* x);
 };
 #endif
 

@@ -84,3 +84,8 @@ void Redsocial::mostrarGiveaway()
         this->ga[i]->mostrarGiveA();
     }
 }
+
+void Redsocial::agregarPublicaciones(Publicacion* x){
+this->publicaciones.push_back(x);
+
+}

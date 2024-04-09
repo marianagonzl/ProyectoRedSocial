@@ -107,8 +107,8 @@ void menuUsuario(Usuario *usu)
 
     case 3:
         cout << "Crear Publicacion" << endl;
-        usu->crearPublicacion();
-        goto inicio;
+        FamousCrushes.agregarPublicaciones(usu->crearPublicacion());
+         goto inicio;
         break;
 
     case 4:
